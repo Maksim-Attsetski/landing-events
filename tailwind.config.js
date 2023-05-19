@@ -14,6 +14,9 @@ module.exports = {
       width: {
         container: 'clamp(300px, 90vw, 1200px)',
       },
+      translate: {
+        fifty: '50%',
+      },
     },
   },
   plugins: [],

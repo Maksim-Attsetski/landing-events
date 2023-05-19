@@ -1,7 +1,7 @@
-import React, { FC, memo } from 'react';
+import React, { FC, Fragment, memo } from 'react';
 import './App.scss';
 import { assets } from 'assets';
-import { Logo } from 'components';
+import { Logo, Timer } from 'components';
 import { Flex, Gap } from 'UI';
 
 const App: FC = () => {
@@ -22,7 +22,33 @@ const App: FC = () => {
             We're making lots of improvements and will be back soon
           </p>
           <Gap y={16} />
-          <div>92 : 11 : 41 : 48</div>
+          <Flex>
+            {[
+              {
+                value: 92,
+                label: 'Days',
+              },
+              {
+                value: 11,
+                label: 'Hours',
+              },
+              {
+                value: 41,
+                label: 'Minutes',
+              },
+              {
+                value: 48,
+                label: 'Seconds',
+              },
+            ].map(({ label, value }, inx, arr) => (
+              <Timer
+                label={label}
+                value={value}
+                dot={inx !== arr.length - 1}
+                key={inx}
+              />
+            ))}
+          </Flex>
           <Gap y={35} />
           <Flex className='flex-col items-center gap-3'>
             <h3>Check our event page when you wait:</h3>
