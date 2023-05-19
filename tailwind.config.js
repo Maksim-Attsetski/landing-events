@@ -18,6 +18,10 @@ module.exports = {
       translate: {
         fifty: '50%',
       },
+      fontSize: {
+        titleS: 'calc(6vmin + 10px)',
+        text: 'calc(1.5vmin + 8px)',
+      },
     },
   },
   plugins: [],

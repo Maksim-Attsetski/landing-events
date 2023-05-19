@@ -14,11 +14,11 @@ const App: FC = () => {
         <Flex className='justify-center items-center flex-col'>
           <Logo />
           <Gap y={45} />
-          <h2 className='uppercase text-titles text-5xl font-bold'>
+          <h2 className='uppercase text-titles text-titleS text-center font-bold'>
             under construction
           </h2>
           <Gap y={4} />
-          <p className='text-lg'>
+          <p className='text-text text-center px-3'>
             We're making lots of improvements and will be back soon
           </p>
           <Gap y={16} />
