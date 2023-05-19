@@ -31,6 +31,10 @@ module.exports = {
         80: '80vh',
         90: '90vh',
       },
+      height: {
+        '80vh': '80vh',
+        '90vh': '90vh',
+      },
     },
   },
   plugins: [],

@@ -75,7 +75,6 @@ const allEvents: IEventItem[] = [
 
 const AllEvents: FC = () => {
   const [openedItemId, setOpenedItemId] = useState<string>(allEvents[0].id);
-  const eventsContainerRef = useRef<HTMLDivElement>(null);
 
   const itemConstants = useMemo(() => {
     const maxWidth = constants.sizes.maxContainerWidth;
@@ -84,13 +83,10 @@ const AllEvents: FC = () => {
       minWidth: 44,
       maxWidth: width * 0.9 - 44 * allEvents.length,
     };
-  }, [eventsContainerRef.current]);
+  }, []);
 
   return (
-    <article
-      ref={eventsContainerRef}
-      className='min-h-90 all-events-container w-container mx-auto'
-    >
+    <article className='min-h-80 all-events-container w-container mx-auto'>
       <Title>All events</Title>
       <Gap y={20} />
       <Flex className='w-full'>
