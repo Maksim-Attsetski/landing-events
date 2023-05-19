@@ -9,7 +9,7 @@ interface IProps {
   dot?: boolean;
 }
 
-const valueClassname = 'text-6xl font-bold text-main';
+const valueClassname = 'text-6xl font-bold';
 
 const Timer: FC<IProps> = ({ label, value, dot = false }) => {
   return (

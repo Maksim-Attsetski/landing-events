@@ -6,9 +6,20 @@ import React, {
   memo,
 } from 'react';
 
-const Button: FC<
-  DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
-> = ({ children, className, ...props }) => {
+interface IProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  withArrow?: boolean;
+}
+
+const Button: FC<IProps> = ({
+  children,
+  className,
+  withArrow = true,
+  ...props
+}) => {
   return (
     <button
       className={[
@@ -18,7 +29,7 @@ const Button: FC<
       {...props}
     >
       {children}
-      <img src={assets.arrowRight} alt={'arrowRight'} />
+      {withArrow && <img src={assets.arrowRight} alt={'arrowRight'} />}
     </button>
   );
 };

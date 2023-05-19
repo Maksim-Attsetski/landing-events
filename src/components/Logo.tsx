@@ -9,10 +9,8 @@ const Logo: FC = () => {
       <img src={assets.logo} alt='logo' />
       <Gap x={8} />
       <div>
-        <h2 className={'text-main font-black text-5xl tracking-2px'}>LEAD</h2>
-        <h5
-          className={'text-main uppercase text-right font-medium tracking-4px'}
-        >
+        <h2 className={'font-black text-5xl tracking-2px'}>LEAD</h2>
+        <h5 className={'uppercase text-right font-medium tracking-4px'}>
           advisors
         </h5>
       </div>
