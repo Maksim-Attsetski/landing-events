@@ -2,7 +2,7 @@ import React, { FC, Fragment, memo } from 'react';
 import './App.scss';
 import { assets } from 'assets';
 import { Logo, Timer } from 'components';
-import { Flex, Gap, Button } from 'UI';
+import { Flex, Gap, Button, Input } from 'UI';
 
 const App: FC = () => {
   return (
@@ -59,10 +59,10 @@ const App: FC = () => {
       <footer className='bg-main fixed bottom-0 left-0 right-0'>
         <Flex className='justify-between items-center py-12 w-container'>
           <div></div>
-          <input
-            className='rounded-2xl py-4 px-5 w-max'
-            type='text'
+          <Input
             placeholder='Enter your Email and get notified'
+            type='email'
+            withBtn
           />
           <div className='text-white'>Other events</div>
         </Flex>

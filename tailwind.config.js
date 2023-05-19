@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         main: '#172C4F',
         titles: '#a4adba',
+        secondary: '#DF2224',
       },
       letterSpacing: {
         '2px': '2px',
