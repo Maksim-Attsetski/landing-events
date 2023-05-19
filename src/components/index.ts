@@ -1,5 +1,6 @@
+import DateTimer from './DateTimer';
 import Footer from './Footer';
 import Logo from './Logo';
-import Timer from './Timer';
+import TimerItem from './TimerItem';
 
-export { Footer, Logo, Timer };
+export { DateTimer, Footer, Logo, TimerItem };

@@ -1,26 +1,26 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useEffect, useRef, useState } from 'react';
 
 import { Flex } from 'UI';
 import RedLabel from './RedLabel';
+import { ITimerItem } from './DateTimer';
 
 interface IProps {
-  value: number;
-  label: string;
+  item: ITimerItem;
   dot?: boolean;
 }
 
 const valueClassname = 'text-6xl font-bold';
 
-const Timer: FC<IProps> = ({ label, value, dot = false }) => {
+const TimerItem: FC<IProps> = ({ item, dot = false }) => {
   return (
     <Flex>
       <Flex className='flex-col justify-center items-center gap-2'>
-        <p className={valueClassname}>{value}</p>
-        <RedLabel>{label}</RedLabel>
+        <p className={valueClassname}>{item.value}</p>
+        <RedLabel>{item.label}</RedLabel>
       </Flex>
       {dot && <span className={valueClassname}>:</span>}
     </Flex>
   );
 };
 
-export default memo(Timer);
+export default memo(TimerItem);

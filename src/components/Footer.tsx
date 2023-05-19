@@ -4,7 +4,7 @@ import React, { FC, memo, useState } from 'react';
 
 const Footer: FC = () => {
   const [email, setEmail] = useState<string>('');
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
 
   const onBtnClick = () => {
     const regex = /^([\w\d]{2,})@([\w\d]{2,}).([\w\d]{2,})$/;
