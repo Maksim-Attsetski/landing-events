@@ -86,7 +86,9 @@ const AllEvents: FC = () => {
   }, []);
 
   return (
-    <article className='min-h-80 all-events-container w-container mx-auto'>
+    <article
+      className={`min-h-80 ${constants.class.allEvent} w-container mx-auto`}
+    >
       <Title>All events</Title>
       <Gap y={20} />
       <Flex className='w-full'>

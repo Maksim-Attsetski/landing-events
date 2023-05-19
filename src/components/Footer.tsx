@@ -1,6 +1,7 @@
 import { Button, Flex, Input, Modal } from 'UI';
 import { assets } from 'assets';
 import React, { FC, memo, useState } from 'react';
+import { constants, scrollTo } from 'utils';
 
 const Footer: FC = () => {
   const [email, setEmail] = useState<string>('');
@@ -15,6 +16,10 @@ const Footer: FC = () => {
     }
 
     setOpen(true);
+  };
+
+  const onClickScroll = () => {
+    scrollTo(constants.class.allEvent);
   };
 
   return (
@@ -47,7 +52,10 @@ const Footer: FC = () => {
             withBtn
             onBtnClick={onBtnClick}
           />
-          <Flex className='text-white gap-3 cursor-pointer'>
+          <Flex
+            onClick={onClickScroll}
+            className='text-white gap-3 cursor-pointer'
+          >
             <span>Other events</span>
             <img
               src={assets.arrowRight}

@@ -6,4 +6,7 @@ export const constants = {
   colors: {
     main: '#172C4F',
   },
+  class: {
+    allEvent: 'all-events-container',
+  },
 };
