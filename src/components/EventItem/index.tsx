@@ -7,7 +7,7 @@ import { constants } from 'utils';
 
 import { IEventItem } from '../AllEvents';
 
-const { colors } = constants;
+const { colors, media } = constants;
 
 interface IProps {
   item: IEventItem;
@@ -35,15 +35,24 @@ const EventItem: FC<IProps> = ({
       onClick={() => setOpenedItemId(item.id)}
       className={[isActive ? s.active : '', s.event].join(' ')}
       animate={
-        isActive ? { width: constants.maxWidth } : { width: constants.minWidth }
+        isActive
+          ? { width: constants.maxWidth, height: media.pc ? 290 : 400 }
+          : { width: constants.minWidth, height: media.pc ? 60 : 400 }
       }
       initial={false}
-      style={{ background: `url(${item.preview})`, backgroundSize: 'cover' }}
+      style={{
+        background: `url(${item.preview})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: media.pc ? '50% 100%' : '',
+      }}
     >
       <div className={s.column}>
         <div
           style={{
-            background: `linear-gradient(rgba(0,0,0,0.7), ${colors.main})`,
+            background: `linear-gradient(to ${
+              media.pc ? 'left' : 'bottom'
+            }, rgba(0,0,0,0.7), ${colors.main})`,
           }}
           className={s.column__gradient}
         />

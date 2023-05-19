@@ -27,7 +27,7 @@ const App: FC = () => {
         <Greeting />
         <AllEvents />
       </main>
-      <Gap y={80} />
+      <Gap y={170} />
       <Footer />
     </div>
   );

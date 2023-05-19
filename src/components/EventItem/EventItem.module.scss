@@ -1,15 +1,29 @@
 $height: 400px;
+$heightMax: 290px;
 
 @mixin pc() {
   @media (max-width: 902px) {
-    @content
+    @content;
   }
 }
 
 .event {
   @apply flex h-[$height] relative cursor-pointer;
 
+  @include pc() {
+    @apply h-max flex-col bg-none justify-between;
+    
+    &.active {
+      @apply h-[$height] flex-col;
+    }
+  }
+    
   &.active {
+    @include pc() {
+      height: $heightMax;
+      background-position: 50px;
+    }
+
     .column {
       @apply bg-main;
     }
@@ -17,13 +31,25 @@ $height: 400px;
 
   .column {
     @apply flex relative h-full flex-col px-2 py-4 justify-end;
+
+    @include pc() {
+      @apply flex-row h-max justify-start px-6;
+    }
+
     &__gradient {
       @apply absolute top-0 left-0 z-[1] right-0 bottom-0;
     }
+    
     &__text {
       @apply rotate-180 z-[2] text-white text-xl;
       writing-mode: vertical-lr;
+      
+      @include pc() {
+        @apply rotate-0 order-1 ml-3;
+        writing-mode: horizontal-tb;
+      }
     }
+    
     &__order {
       @apply text-center z-[2] font-medium text-white text-xl;
     }
@@ -32,6 +58,10 @@ $height: 400px;
   .info {
     $size: 150px;
     @apply text-white relative z-[1] p-6 bg-shadow flex flex-col overflow-hidden justify-end;
+
+    @include pc() {
+      @apply justify-start;
+    }
 
     &__order {
       @apply absolute -top-[60px] -left-[30px] -z-[2] opacity-10 font-semibold;
