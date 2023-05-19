@@ -36,7 +36,7 @@ const Footer: FC = () => {
           </Button>
         </Flex>
       </Modal>
-      <footer className='bg-main fixed bottom-0 left-0 right-0'>
+      <footer className='bg-main z-40 fixed bottom-0 left-0 right-0'>
         <Flex className='justify-center sm:justify-between flex-col sm:flex-row gap-5 items-center py-7 sm:py-12 w-container mx-auto'>
           <div></div>
           <Input

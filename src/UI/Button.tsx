@@ -23,7 +23,7 @@ const Button: FC<IProps> = ({
   return (
     <button
       className={[
-        'bg-main text-white py-4 px-6 rounded-3xl flex gap-6 items-center transition-all active:translate-y-1',
+        'realtive bg-main text-white py-4 px-6 rounded-3xl flex gap-6 items-center transition-all active:translate-y-1',
         className,
       ].join(' ')}
       {...props}

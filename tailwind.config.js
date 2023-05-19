@@ -27,6 +27,10 @@ module.exports = {
       rotate: {
         360: '360deg',
       },
+      minHeight: {
+        80: '80vh',
+        90: '90vh',
+      },
     },
   },
   plugins: [],

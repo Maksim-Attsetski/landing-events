@@ -1,7 +1,14 @@
 import React, { FC, Fragment, memo } from 'react';
 import './App.scss';
 import { assets } from 'assets';
-import { DateTimer, Footer, Logo, TimerItem } from 'components';
+import {
+  AllEvents,
+  DateTimer,
+  Footer,
+  Greeting,
+  Logo,
+  TimerItem,
+} from 'components';
 import { Flex, Gap, Button, Input } from 'UI';
 
 const App: FC = () => {
@@ -10,25 +17,8 @@ const App: FC = () => {
       <img className='cloud one' src={assets.cloud1} alt='cloud1' />
       <img className='cloud two' src={assets.cloud2} alt='cloud2' />
       <main>
-        <Gap y={60} />
-        <Flex className='justify-center items-center flex-col'>
-          <Logo />
-          <Gap y={45} />
-          <h2 className='uppercase text-titles text-titleS text-center font-bold'>
-            under construction
-          </h2>
-          <Gap y={4} />
-          <p className='text-text text-center px-3'>
-            We're making lots of improvements and will be back soon
-          </p>
-          <Gap y={16} />
-          <DateTimer />
-          <Gap y={35} />
-          <Flex className='flex-col items-center gap-3'>
-            <h3>Check our event page when you wait:</h3>
-            <Button>Go to the event</Button>
-          </Flex>
-        </Flex>
+        <Greeting />
+        <AllEvents />
       </main>
       <Gap y={80} />
       <Footer />

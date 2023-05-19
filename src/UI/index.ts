@@ -3,5 +3,6 @@ import Flex from './Flex';
 import Gap from './Gap';
 import Input from './Input';
 import Modal from './Modal';
+import Title from './Title';
 
-export { Input, Button, Gap, Flex, Modal };
+export { Title, Input, Button, Gap, Flex, Modal };
