@@ -2,7 +2,7 @@ import React, { FC, Fragment, memo } from 'react';
 import './App.scss';
 import { assets } from 'assets';
 import { Logo, Timer } from 'components';
-import { Flex, Gap } from 'UI';
+import { Flex, Gap, Button } from 'UI';
 
 const App: FC = () => {
   return (
@@ -52,7 +52,7 @@ const App: FC = () => {
           <Gap y={35} />
           <Flex className='flex-col items-center gap-3'>
             <h3>Check our event page when you wait:</h3>
-            <button>go to the event</button>
+            <Button>Go to the event</Button>
           </Flex>
         </Flex>
       </main>
