@@ -56,6 +56,7 @@ const App: FC = () => {
           </Flex>
         </Flex>
       </main>
+      <Gap y={80} />
       <Footer />
     </div>
   );
