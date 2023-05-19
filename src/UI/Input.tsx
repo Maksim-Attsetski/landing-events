@@ -1,5 +1,13 @@
 import { assets } from 'assets';
-import React, { DetailedHTMLProps, FC, InputHTMLAttributes, memo } from 'react';
+import React, {
+  ChangeEvent,
+  DetailedHTMLProps,
+  Dispatch,
+  FC,
+  InputHTMLAttributes,
+  SetStateAction,
+  memo,
+} from 'react';
 
 interface IProps
   extends DetailedHTMLProps<
@@ -8,13 +16,22 @@ interface IProps
   > {
   containerClassName?: string;
   withBtn?: boolean;
+  setValue: Dispatch<SetStateAction<string>>;
+  onBtnClick?: () => void;
 }
+
 const Input: FC<IProps> = ({
   containerClassName = '',
   className,
   withBtn = false,
+  setValue,
+  onBtnClick = () => {},
   ...props
 }) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
   return (
     <div className={['relative w-max', containerClassName].join(' ')}>
       <input
@@ -25,9 +42,13 @@ const Input: FC<IProps> = ({
           className,
         ].join(' ')}
         {...props}
+        onChange={onChange}
       />
       {true && (
-        <button className='absolute top-1 p-2 right-1 bg-secondary rounded-full'>
+        <button
+          onClick={onBtnClick}
+          className='absolute top-1 p-2 right-1 bg-secondary rounded-full'
+        >
           <img className='w-4' src={assets.arrowRight} alt='arrowRight' />
         </button>
       )}
