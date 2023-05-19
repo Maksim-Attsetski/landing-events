@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         main: '#172C4F',
-        titles: '#a4adba',
+        'title-color': '#a4adba',
         secondary: '#DF2224',
         shadow: 'rgba(0,0,0,0.5)',
       },
@@ -23,6 +23,7 @@ module.exports = {
       fontSize: {
         titleS: 'calc(6vmin + 10px)',
         text: 'calc(1.5vmin + 8px)',
+        label: 'calc(1vmin + 6px)',
       },
       rotate: {
         360: '360deg',

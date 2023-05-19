@@ -7,9 +7,10 @@ const RedLabel: FC<PropsWithChildren> = ({ children }) => {
       <img
         src={assets.timerLabel}
         alt='timer label'
-        className='w-32 scale-x-90'
+        className='scale-x-90'
+        style={{ width: 'calc(10vmin + 32px)' }}
       />
-      <p className='absolute top-1/2 left-1/2 -translate-x-fifty -translate-y-fifty text-white'>
+      <p className='absolute text-label top-1/2 left-1/2 -translate-x-fifty -translate-y-fifty text-white'>
         {children}
       </p>
     </div>

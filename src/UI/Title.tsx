@@ -7,7 +7,7 @@ const Title: FC<PropsWithChildren> = ({ children }) => {
   return (
     <motion.h2
       {...fadeUp(0, 100, 0.2, true)}
-      className='uppercase text-titles text-titleS text-center font-bold'
+      className='uppercase text-title-color text-titleS text-center font-bold'
     >
       {children}
     </motion.h2>

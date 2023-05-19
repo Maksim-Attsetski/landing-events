@@ -8,8 +8,6 @@ export interface ITimerItem {
   value: number;
 }
 
-const now = new Date().getTime();
-
 const defaultTimeDate = [
   { value: 0, label: 'Days' },
   { value: 0, label: 'Hours' },
@@ -18,7 +16,10 @@ const defaultTimeDate = [
 ];
 
 const DateTimer: FC<{ endDate?: string }> = ({ endDate = '05-31-2023' }) => {
-  const difference = useMemo(() => new Date(endDate).getTime() - now, []);
+  const difference = useMemo(
+    () => new Date(endDate).getTime() - new Date().getTime(),
+    [endDate]
+  );
   const [timeDate, setTimeDate] = useState(getTime());
 
   function getTime() {
@@ -46,6 +47,7 @@ const DateTimer: FC<{ endDate?: string }> = ({ endDate = '05-31-2023' }) => {
     return () => {
       clearInterval(timer);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -27,12 +27,13 @@ const Greeting: FC = () => {
         <motion.div {...fadeUp(0, 100, 0.5)}>
           <Flex className='flex-col items-center gap-3'>
             <h3>Check our event page when you wait:</h3>
-            <Button>
+            <Button className='relative'>
               <a
+                rel='noreferrer'
                 className='absolute top-0 left-0 right-0 bottom-0'
                 href='https://github.com/Maksim-Attsetski'
                 target='_blank'
-              ></a>
+              />
               Go to the event
             </Button>
           </Flex>

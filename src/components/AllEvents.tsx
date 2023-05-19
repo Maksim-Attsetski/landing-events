@@ -1,10 +1,10 @@
-import React, { FC, memo, useMemo, useRef, useState } from 'react';
+import React, { FC, memo, useMemo, useState } from 'react';
 
 import { Flex, Gap, Title } from 'UI';
 import { assets } from 'assets';
+import { constants } from 'utils';
 
 import EventItem from './EventItem';
-import { constants } from 'utils';
 
 export interface IEventItem {
   id: string;
@@ -77,8 +77,16 @@ const AllEvents: FC = () => {
   const [openedItemId, setOpenedItemId] = useState<string>(allEvents[0].id);
 
   const itemConstants = useMemo(() => {
+    if (constants.media.pc) {
+      return {
+        minWidth: window.innerWidth * 0.9,
+        maxWidth: window.innerWidth * 0.9,
+      };
+    }
+
     const maxWidth = constants.sizes.maxContainerWidth;
     const width = window.innerWidth > maxWidth ? maxWidth : window.innerWidth;
+
     return {
       minWidth: 44,
       maxWidth: width * 0.9 - 44 * allEvents.length,
@@ -94,6 +102,7 @@ const AllEvents: FC = () => {
       <Flex className='w-full'>
         {allEvents.map((event) => (
           <EventItem
+            key={event.id}
             constants={itemConstants}
             item={event}
             openedItemId={openedItemId}

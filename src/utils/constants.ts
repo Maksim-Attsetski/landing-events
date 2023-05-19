@@ -1,3 +1,5 @@
+const width = window.innerWidth;
+
 export const constants = {
   sizes: {
     minContainerWidth: 300,
@@ -8,5 +10,8 @@ export const constants = {
   },
   class: {
     allEvent: 'all-events-container',
+  },
+  media: {
+    pc: width <= 902,
   },
 };

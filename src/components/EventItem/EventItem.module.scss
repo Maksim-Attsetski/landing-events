@@ -1,0 +1,45 @@
+$height: 400px;
+
+@mixin pc() {
+  @media (max-width: 902px) {
+    @content
+  }
+}
+
+.event {
+  @apply flex h-[$height] relative cursor-pointer;
+
+  &.active {
+    .column {
+      @apply bg-main;
+    }
+  }
+
+  .column {
+    @apply flex relative h-full flex-col px-2 py-4 justify-end;
+    &__gradient {
+      @apply absolute top-0 left-0 z-[1] right-0 bottom-0;
+    }
+    &__text {
+      @apply rotate-180 z-[2] text-white text-xl;
+      writing-mode: vertical-lr;
+    }
+    &__order {
+      @apply text-center z-[2] font-medium text-white text-xl;
+    }
+  }
+
+  .info {
+    $size: 150px;
+    @apply text-white relative z-[1] p-6 bg-shadow flex flex-col overflow-hidden justify-end;
+
+    &__order {
+      @apply absolute -top-[60px] -left-[30px] -z-[2] opacity-10 font-semibold;
+      font-size: $size;
+    }
+
+    &__btn {
+      @apply border-2 border-white border-solid py-2 px-7 border-l-8;
+    }
+  }
+}

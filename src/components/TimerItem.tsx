@@ -1,6 +1,7 @@
-import React, { FC, memo, useEffect, useRef, useState } from 'react';
+import React, { FC, memo } from 'react';
 
 import { Flex } from 'UI';
+
 import RedLabel from './RedLabel';
 import { ITimerItem } from './DateTimer';
 
@@ -9,7 +10,7 @@ interface IProps {
   dot?: boolean;
 }
 
-const valueClassname = 'text-6xl font-bold';
+const valueClassname = 'text-titleS text-main font-bold';
 
 const TimerItem: FC<IProps> = ({ item, dot = false }) => {
   return (
